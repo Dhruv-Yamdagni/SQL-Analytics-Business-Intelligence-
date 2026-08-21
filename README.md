@@ -1,31 +1,56 @@
-# SQL Data Warehouse Project
+# SQL Analytics & Data Warehouse Reporting Engine
 
 ## Overview
 
-This project demonstrates the implementation of a modern SQL Server Data Warehouse using a Star Schema architecture. It covers the complete data warehousing workflow, including data ingestion, ETL (Extract, Transform, Load) processes, dimensional modeling, reporting views, and analytical SQL queries to support business intelligence and data-driven decision-making.
+This project focuses on advanced business intelligence (BI) analytics, data segmentation, exploratory data analysis (EDA), and automated reporting views built on a SQL Server Data Warehouse architecture. Utilizing structured star-schema tables (`dbo.fact_sales`, `dbo.dim_customers`, and `dbo.dim_products`), the SQL scripts compute critical KPI metrics, customer and product lifetime values, cumulative growth trends, and multi-tier data segmentations to power business decision-making.
 
 ---
 
-## Project Objectives
+## Technical Highlights & Analytical Use Cases
 
-- Design a scalable SQL Server Data Warehouse
-- Implement ETL (Extract, Transform, Load) processes
-- Build a Star Schema using Fact and Dimension tables
-- Transform and standardize raw business data
-- Create reporting views for business analysis
-- Enable efficient analytical querying
+- **Time Series & Cumulative Analysis:** Aggregated monthly sales, running totals (`SUM OVER`), and moving price averages (`AVG OVER`).
+- **Year-over-Year (YoY) & Performance Comparison:** Applied window functions (`LAG`, `PARTITION BY`) to track YoY changes and flag products performing above or below average.
+- **Part-to-Whole Analysis:** Evaluated category impact relative to overall revenue using percentage calculations.
+- **Data Segmentation Models:** Classified products by cost tiers and segmented customers into `VIP`, `Regular`, and `New` tiers based on revenue and account lifespan.
+- **Automated Reporting Views:** Built `dbo.report_customers` and `dbo.report_product` views calculating Recency, Lifespan, Average Order Value (AOV), Monthly Spend, and Product Performance tiers.
 
 ---
 
 ## Technologies Used
 
-- SQL Server
-- T-SQL
-- SQL Server Management Studio (SSMS)
+- **Database:** Microsoft SQL Server
+- **Language:** T-SQL (Transact-SQL)
+- **Tooling:** SQL Server Management Studio (SSMS)
 
 ---
 
-## Technical Skills
+## Advanced Technical Skills
+
+- Window Functions (`SUM`, `AVG`, `LAG`, `PARTITION BY`)
+- Common Table Expressions (CTEs)
+- Database Views (`CREATE VIEW`)
+- Data Segmentation & Bucketing (`CASE WHEN`)
+- KPI Calculation (Recency, Lifespan, AOV, Monthly Spend)
+- Conditional Aggregations & Joins (`LEFT JOIN`)
+- Advanced Date Functions (`DATEDIFF`, `DATETRUNC`, `FORMAT`)
+
+---
+
+## Repository Structure
+
+```text
+.
+├── scripts/
+│   ├── analytics/
+│   │   ├── changes_over_time.sql
+│   │   ├── cumulative_analysis.sql
+│   │   ├── performance_analysis.sql
+│   │   ├── part_to_whole_analysis.sql
+│   │   └── data_segmentation.sql
+│   └── views/
+│       ├── report_customers.sql
+│       └── report_product.sql
+└── README.md
 
 - Data Warehousing
 - Star Schema Design
